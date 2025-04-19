@@ -1,0 +1,30 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nginx-deployment
+  namespace: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+ 
+# pod detail
+  template:
+    metadata:
+      labels:
+        app: nginx
+    
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /var/www/html
+          name: deployment-my-volume
+      volumes:
+        - name: deployment-my-volume 
+          persistentVolumeClaim:
+            claimName: local-pvc
