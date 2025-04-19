@@ -1,5 +1,5 @@
 # Kubernetes Persistent Volumes and Persistent Volume Claims
-
+Read to under overall flow of pv, pvc, pod, node and kind-container : https://github.com/ignius299792458/k8s-storage-PV-PVC/blob/main/overall-flow-pv-and-pvc.md 
 ## Persistent Volume (PV)
 
 A Persistent Volume is a piece of storage in your Kubernetes cluster that has been provisioned by an administrator or dynamically provisioned using Storage Classes.
